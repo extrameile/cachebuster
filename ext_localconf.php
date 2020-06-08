@@ -1,17 +1,17 @@
 <?php
 
 if (TYPO3_MODE === 'FE') {
-	$signalSlotDispatcher->connect(
-		'TYPO3\\CMS\\Core\\Resource\\ResourceStorage',
-		\TYPO3\CMS\Core\Resource\ResourceStorage::SIGNAL_PreGeneratePublicUrl,
-		'Lemming\\Cachebuster\\Aspects\\PublicUrlAspect',
-		'generatePublicUrl'
-	);
+    $signalSlotDispatcher->connect(
+        'TYPO3\\CMS\\Core\\Resource\\ResourceStorage',
+        \TYPO3\CMS\Core\Resource\ResourceStorage::SIGNAL_PreGeneratePublicUrl,
+        'Lemming\\Cachebuster\\Aspects\\PublicUrlAspect',
+        'generatePublicUrl'
+    );
 }
 
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Fluid\\ViewHelpers\\Uri\\ResourceViewHelper'] = array(
-	'className' => 'Lemming\\Cachebuster\\XClass\\ResourceViewHelper',
+    'className' => 'Lemming\\Cachebuster\\XClass\\ResourceViewHelper',
 );
 $GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Core\\Resource\\ResourceFactory'] = array(
-	'className' => 'Lemming\\Cachebuster\\XClass\\ResourceFactory',
+    'className' => 'Lemming\\Cachebuster\\XClass\\ResourceFactory',
 );
