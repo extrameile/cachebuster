@@ -4,7 +4,15 @@
     "description": "",
     "authors": [
         {
+            "name": "Christoph Lehmann",
+            "role": "Developer"
+        },
+        {
             "name": "Andreas Kießling",
+            "role": "Developer"
+        },
+        {
+            "name": "Alexander Opitz",
             "role": "Developer"
         }
     ],

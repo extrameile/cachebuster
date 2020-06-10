@@ -1,17 +1,11 @@
 <?php
 
-if (TYPO3_MODE === 'FE') {
+call_user_func(function () {
+    $signalSlotDispatcher = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\SignalSlot\Dispatcher::class);
     $signalSlotDispatcher->connect(
-        'TYPO3\\CMS\\Core\\Resource\\ResourceStorage',
+        \TYPO3\CMS\Core\Resource\ResourceStorage::class,
         \TYPO3\CMS\Core\Resource\ResourceStorage::SIGNAL_PreGeneratePublicUrl,
-        'Lemming\\Cachebuster\\Aspects\\PublicUrlAspect',
+        \Extrameile\Cachebuster\Aspects\PublicUrlAspect::class,
         'generatePublicUrl'
     );
-}
-
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Fluid\\ViewHelpers\\Uri\\ResourceViewHelper'] = array(
-    'className' => 'Lemming\\Cachebuster\\XClass\\ResourceViewHelper',
-);
-$GLOBALS['TYPO3_CONF_VARS']['SYS']['Objects']['TYPO3\\CMS\\Core\\Resource\\ResourceFactory'] = array(
-    'className' => 'Lemming\\Cachebuster\\XClass\\ResourceFactory',
-);
+});

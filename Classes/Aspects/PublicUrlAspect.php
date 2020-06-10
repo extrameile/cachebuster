@@ -1,6 +1,8 @@
 <?php
 
-namespace Lemming\Cachebuster\Aspects;
+declare(strict_types=1);
+
+namespace Extrameile\Cachebuster\Aspects;
 
 use TYPO3\CMS\Core\Resource;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
