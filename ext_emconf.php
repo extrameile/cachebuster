@@ -15,7 +15,7 @@ $EM_CONF['cachebuster'] = [
     'version' => '0.2.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '8.5.0-10.4.99',
+            'typo3' => '9.5.0-10.4.99',
         ],
     ],
 ];
