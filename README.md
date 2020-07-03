@@ -1,3 +1,5 @@
+# Abandoned, switch to https://github.com/Kephson/reint_file_timestamp for TYPO3 9 / 10
+
 # TYPO3 Cachebuster Extension
 
 It adds a cachebuster to files referenced via FAL and Fluid Viewhelpers like f:uri.resource or f:image and makes it possible to savely set cache-control headers like
